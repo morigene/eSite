@@ -42,6 +42,7 @@ echo '<br>'.murego;
    } catch (PDOException $e){
       
       $message = " Error".$e->getMessage()."<br>";
+     echo 'Error is always error';
    }
 ?>
 <!DOCTYPE html>
