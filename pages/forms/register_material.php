@@ -47,12 +47,12 @@ session_start();
       $con->beginTransaction();
       // ============= We need to initiate the amount in store ======================================
   $stmt = $con->prepare('INSERT INTO material(material_id,material_name,material_type,material_code,quantity,unit,operator) VALUES(?,?,?,?,?,?,?)');
-      $stmt->execute(['',$_POST['material_name'],$_POST['material_type'],$material_code,$_POST['starting_quantity'],$_POST['unit'],$_SESSION['name']]);
+      $stmt->execute([NULL,$_POST['material_name'],$_POST['material_type'],$material_code,$_POST['starting_quantity'],$_POST['unit'],$_SESSION['name']]);
 /*
 =====AFTER INITIATING THE STORE, WE need to initiate also in historical As INITIAL AMOUNT ALSO ========
 */
       $sql_insert = $con->prepare("INSERT INTO material_history (material_history_id,material_name,material_code,status,quantity,operation_date,operator) VALUES(?,?,?,?,?,?,?)");
-     $sql_insert->execute(['',$_POST['material_name'],$material_code,'In',$_POST['starting_quantity'],date("Y-m-d H:i:S"),$_SESSION['name']]);
+     $sql_insert->execute([NULL,$_POST['material_name'],$material_code,'In',$_POST['starting_quantity'],date("Y-m-d H:i"),$_SESSION['name']]);
        $con->commit();
 
       if($stmt == true){

@@ -55,7 +55,7 @@ $update = $con->exec("UPDATE material SET quantity = '".$material_in."'WHERE  ma
 /*==========INSERT Into Historical table to keep record of quantity in and date of operation =========*/
      $con->beginTransaction();
      $sql_insert = $con->prepare("INSERT INTO material_history (material_history_id,material_name,material_code,status,quantity,operation_date,operator) VALUES(?,?,?,?,?,?,?)");
-     $sql_insert->execute(['',$material_name,$_POST['material_code'],'In',$_POST['quantity_in'],date("Y-m-d H:i:S"),$_SESSION['name']]);
+     $sql_insert->execute([NULL,$material_name,$_POST['material_code'],'In',$_POST['quantity_in'],date("Y-m-d H:i:S"),$_SESSION['name']]);
      $con->commit();
      $message = "The material amount are added!.......";
 }catch(PDOException $e){

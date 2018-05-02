@@ -45,7 +45,7 @@ require '../../config.php';
 if(isset($_POST["save_record"])){
 try{
 $result = $con->exec("INSERT INTO meeting_schedule(meeting_id,meeting_date,
-  meeting_hour,meeting_agenda,meeting_moderator,moderator_type,meeting_status) VALUES ('','".$_POST['meeting_date']."','".$_POST['meeting_hour']."','".$_POST['meeting_agenda']."','".$_POST['meeting_moderator']."','".$_POST['moderator_type']."','true')") or die ("could not insert");
+  meeting_hour,meeting_agenda,meeting_moderator,moderator_type,meeting_status) VALUES (NULL,'".$_POST['meeting_date']."','".$_POST['meeting_hour']."','".$_POST['meeting_agenda']."','".$_POST['meeting_moderator']."','".$_POST['moderator_type']."','true')") or die ("could not insert");
 if($result == true){
 
 $message = "Meeting schedule is saved successful!.";

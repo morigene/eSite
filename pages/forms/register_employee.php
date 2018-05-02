@@ -46,8 +46,8 @@ try{
   if (isset($_POST['save_record'])) {
     # code...
 $con->beginTransaction();
-$stmt = $con->prepare("INSERT INTO employees (  employee_id,employee_idNo,firstname,lastname,employee_type,payment_category,identity,phone_no,email) VALUES (?,?,?,?,?,?,?,?,?)");
-$stmt ->execute(['',uniqid($_POST['lastname']),$_POST['firstname'],$_POST['lastname'],$_POST['type'],$_POST['category'],$_POST['identity'],$_POST['phone_no'],$_POST['email']]);
+$stmt = $con->prepare("INSERT INTO employees( employee_id,employee_idNo,firstname,lastname,employee_type,payment_category,identity,phone_no,email) VALUES (?,?,?,?,?,?,?,?,?)");
+$stmt ->execute([NULL,uniqid($_POST['lastname']),$_POST['firstname'],$_POST['lastname'],$_POST['type'],$_POST['category'],$_POST['identity'],$_POST['phone_no'],$_POST['email']]);
 $con->commit();
 $message = "Employee is saved Successful";
   }

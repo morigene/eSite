@@ -45,7 +45,7 @@ session_start();
 if(isset($_POST["save_record"])){
 
 
-$result = $con->exec("INSERT INTO equipment (equipment_id,equipment_name,equipment_type,equipment_quantity,cost_per_unit,total_cost) VALUES ('','".$_POST['equipment_name']."','".$_POST['equipment_type']."','".$_POST['equipment_quantity']."','".$_POST['cost_per_unit']."','".$_POST['total_cost']."')");
+$result = $con->exec("INSERT INTO equipment (equipment_id,equipment_name,equipment_type,equipment_quantity,cost_per_unit,total_cost) VALUES (NULL,'".$_POST['equipment_name']."','".$_POST['equipment_type']."','".$_POST['equipment_quantity']."','".$_POST['cost_per_unit']."','".$_POST['total_cost']."')");
 
   $message = "Equipment is saved successful";
 }

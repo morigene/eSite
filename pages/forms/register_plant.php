@@ -1,4 +1,4 @@
-s<?php  
+<?php  
 session_start();
 include '../../config.php';
 ?>
@@ -44,7 +44,7 @@ include '../../config.php';
   try{
 $message = "";
 if(isset($_POST["save_record"])){
-$result = $con->exec("INSERT INTO plant(plant_id,plant_name,plant_model,plant_owner,task,fuel_type,fuel_cost,operator_cost) VALUES ('','".$_POST['plant_name']."','".$_POST['plant_model']."','".$_POST['plant_owner']."','".$_POST['plant_task']."','".$_POST['fuel_type']."','".$_POST['fuel_cost']."','".$_POST['operator_cost']."')");
+$result = $con->exec("INSERT INTO plant(plant_id,plant_name,plant_model,plant_owner,task,fuel_type,fuel_cost,operator_cost) VALUES (NULL,'".$_POST['plant_name']."','".$_POST['plant_model']."','".$_POST['plant_owner']."','".$_POST['plant_task']."','".$_POST['fuel_type']."','".$_POST['fuel_cost']."','".$_POST['operator_cost']."')");
 
   $message = "Plant is saved successful ";
 }

@@ -45,7 +45,7 @@
 if(isset($_POST["save_record"])){
 try{
 $result = $con->exec("INSERT INTO meeting(meeting_id,meeting_date,
-  meeting_moderator,moderator_type,meeting_agenda,meeting_summary_orDetails) VALUES ('','".$_POST['meeting_date']."','".$_POST['meeting_moderator']."','".$_POST['moderator_type']."','".$_POST['meeting_agenda']."','".$_POST['summary']."')") or die ("could not insert");
+  meeting_moderator,moderator_type,meeting_agenda,meeting_summary_orDetails) VALUES (NULL,'".$_POST['meeting_date']."','".$_POST['meeting_moderator']."','".$_POST['moderator_type']."','".$_POST['meeting_agenda']."','".$_POST['summary']."')") or die ("could not insert");
 if($result == true){
 
 $message = "Meeting is saved successful";

@@ -1,13 +1,15 @@
 <?PHP
-define('db_host' , 'mysql:host=localhost;dbname=esite_db');
-define('db_user', 'root');
-define('db_pwd','');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'morigene@123');
+define('DB_NAME', 'esite_db');
 
-$con  = new PDO(db_host, db_user, db_pwd);
-$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 try{
-	if($con == TRUE){
-	//echo ' successful opened';
+$con = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASS);
+$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	if($con ==TRUE){
+ /*echo ' successful opened';*/
+
 }else{
 	echo 'not successful opened';
 }
